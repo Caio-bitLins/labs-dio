@@ -1,103 +1,71 @@
-# Configurando Recursos e Dimensionamentos em Máquinas Virtuais na Azure 
+### Configurando Recursos e Dimensionamentos em Máquinas Virtuais na Azure
 
-## Passo a Passo para Criar Sua VM
+### Passo 1: Acessar o Portal do Azure
 
-### 1. Acesse o Portal do Azure 
+1. *Entrar no Portal*:
+   - Acesse [portal.azure.com](https://portal.azure.com) e faça login com sua conta.
 
-1. Entre no [Portal do Azure](https://portal.azure.com).
-2. No painel, procure por “Máquinas Virtuais” e clique em **"Criar"**. 
+### Passo 2: Criar uma Máquina Virtual
 
+1. *Criar um Recurso*:
+   - No painel do Azure, clique em *"Criar um recurso"*.
 
-### 2. Configure a Máquina Virtual 
+2. *Selecionar Máquinas Virtuais*:
+   - Na barra de busca, digite *"Máquina Virtual"* e selecione *"Máquina Virtual"* nos resultados.
 
-1. **Nome da VM**: Escolha um nome fácil de lembrar.
+3. *Iniciar o Processo de Criação*:
+   - Clique em *"Criar"*.
 
-   ![2](https://github.com/user-attachments/assets/2d30f6bd-ed9f-42a2-8d81-c5f3a98b0d48)
+### Passo 3: Configurar a Máquina Virtual
 
-3. **Região**: Selecione a região mais próxima dos seus usuários para melhor performance.
+1. *Informações Básicas*:
+   - *Assinatura*: Selecione a assinatura desejada.
+   - *Grupo de Recursos*: Escolha um grupo existente ou crie um novo (clique em "Criar novo").
+   - *Nome da Máquina Virtual*: Dê um nome à VM.
+   - *Região*: Selecione a região onde deseja criar a VM.
+   - *Imagem*: Escolha o sistema operacional (ex.: Windows Server, Ubuntu).
+   - *Tamanho*: Clique em "Selecionar tamanho" e escolha o tamanho adequado para suas necessidades de CPU e memória.
 
-   ![3](https://github.com/user-attachments/assets/7753a722-46b0-46bc-87b6-612a907efcaf)
+2. *Configurações de Admin*:
+   - *Nome de Usuário*: Defina um nome de usuário para acesso à VM.
+   - *Senha*: Insira uma senha forte ou, se escolher Linux, use uma chave SSH.
 
-5. **Imagem**: Escolha o sistema operacional (Windows ou Linux) que você quer usar.
+### Passo 4: Configurações de Rede
 
-   ![4](https://github.com/user-attachments/assets/cd7963d9-03d7-40b5-b0f9-4e6cf6800f40)
+1. *Configurar Rede*:
+   - *Rede Virtual*: Crie uma nova ou escolha uma existente.
+   - *Sub-rede*: Selecione a sub-rede padrão ou crie uma nova.
+   - *Grupo de Segurança de Rede*: Configure regras para permitir acesso (como RDP para Windows ou SSH para Linux).
 
-7. **Tamanho**: Selecione o tamanho da VM com base nas suas necessidades de CPU e memória.
-   
-   ![8](https://github.com/user-attachments/assets/2fac5ad0-3cee-4e84-8839-2e2b27381126)
+### Passo 5: Configurações Adicionais
 
-   Importante!
-   ![Importante](https://github.com/user-attachments/assets/a75f4971-63b3-456c-844d-b9eb78a27b40)
+1. *Gerenciamento*:
+   - Ative opções como monitoramento e backups automáticos.
 
-### 3. Configure o Dimensionamento da VM 
+2. *Tags*:
+   - Adicione tags para ajudar na organização e faturamento.
 
-1. **Dimensionamento Manual**: Escolha um tamanho de VM baseado na carga de trabalho que você espera. O Azure oferece uma variedade de tamanhos de VM, desde opções básicas para tarefas leves até opções robustas para aplicações exigentes. 
+### Passo 6: Revisar e Criar
 
-   ![5 D](https://github.com/user-attachments/assets/b7529669-1546-4a45-89b6-dd40d4f6a833)
+1. *Revisar Configurações*:
+   - Verifique todas as configurações e informações inseridas.
 
-   ![6](https://github.com/user-attachments/assets/e053e210-c33b-4972-8f28-98b4506a8448)
+2. *Criar a Máquina Virtual*:
+   - Clique em *"Criar"* para iniciar a implantação.
 
-3. **Dimensionamento Automático**: Configure a autoescala para ajustar automaticamente os recursos da VM com base na demanda. Isso é útil se você tem variações significativas no uso ou precisa garantir que a VM possa lidar com picos de carga. 
-  
-4. **Utilize o Azure Advisor**: O Azure Advisor fornece recomendações de dimensionamento com base no desempenho atual da sua VM. Ele pode sugerir ajustes para economizar custos ou melhorar o desempenho. 
+### Passo 7: Conectar-se à Máquina Virtual
 
-### 4. Configure a Rede 
+1. *Conexão*:
+   - Após a criação, vá para o grupo de recursos e selecione a VM.
+   - Clique em *"Conectar"*.
+   - Escolha o método de conexão (RDP para Windows ou SSH para Linux).
+   - Siga as instruções para conectar-se à VM.
 
-1. **Rede Virtual**: Crie uma nova rede ou escolha uma existente.
-3. **Sub-rede**: Escolha a sub-rede para conectar sua VM.
-4. **Grupo de Segurança de Rede (NSG)**: Defina regras para controlar o tráfego de entrada e saída da VM. Só permita o tráfego que você realmente precisa.
+### Passo 8: Gerenciar a Máquina Virtual
 
-### 5. Defina Credenciais 
+1. *Monitoramento*:
+   - Utilize o painel da VM para verificar o desempenho e fazer ajustes conforme necessário.
 
-1. **Nome de Usuário e Senha**: Configure um usuário e senha fortes para acessar sua VM.
-2. **Chaves SSH (para Linux)**: Se for Linux, use chaves SSH para se conectar com mais segurança.
-    
-   ![9](https://github.com/user-attachments/assets/fcc5cad0-0bbc-4970-bbee-af8bbcc022b3)
-
-### 6. Configurações Adicionais ⚙
-
-1. **Monitoramento**: Habilite o monitoramento para ficar de olho no desempenho da VM.
-2. **Tags**: Adicione tags para organizar melhor seus recursos.
-   
-   ![12 Monitoramento](https://github.com/user-attachments/assets/6cc0de46-79ff-455d-82e7-cc6c5610a071)
-
-### 7. Revise e Crie 
-
-1. Confira todas as configurações.
-2. Clique em **"Criar"** e aguarde enquanto o Azure prepara sua VM.
-   
-   ![13 Revisar](https://github.com/user-attachments/assets/ba2acd64-bbbb-4f04-af56-fb29b80e67de)
-
-### 8. Conecte-se à Sua VM 
-
-1. **Para Windows**: Use Remote Desktop (RDP) para se conectar.
-2. **Para Linux**: Use SSH para acessar a VM.
-
-# Cuidados Importantes para Produção
-
-## 1. **Segurança**
-
-- **Configuração do NSG**: Defina regras de firewall para proteger sua VM. Bloqueie tudo que não é necessário.
-- **Atualizações**: Mantenha o sistema e aplicativos atualizados.
-- **Gerenciamento de Credenciais**: Use senhas fortes e considere ferramentas como Azure Key Vault para gerenciar segredos.
-
-## 2. **Desempenho**
-
-- **Tamanho Adequado**: Escolha o tamanho certo da VM para evitar problemas de desempenho.
-- **Autoescala**: Configure o dimensionamento automático se sua carga de trabalho variar muito.
-
-## 3. **Backup**
-
-- **Backups Regulares**: Garanta que backups sejam feitos frequentemente.
-- **Plano de Recuperação**: Tenha um plano de recuperação em caso de falhas.
-
-## 4. **Monitoramento**
-
-- **Acompanhe o Desempenho**: Use ferramentas de monitoramento para verificar como a VM está funcionando.
-- **Relatórios**: Gere relatórios para ficar de olho no uso e na segurança.
-
-## 5. **Custo**
-
-- **Controle de Custos**: Acompanhe o uso e ajuste suas configurações para não gastar mais do que o necessário.
-
-<img src="https://media.tenor.com/qVKlQMB2DpsAAAAM/hacker-hacking.gif" width="230"></h2>
+2. *Parar ou Excluir a VM*:
+   - Para parar, clique em *"Desligar"*.
+   - Para excluir, clique em *"Excluir"* e confirme a ação.
