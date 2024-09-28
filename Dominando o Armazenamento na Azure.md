@@ -1,4 +1,4 @@
-# Configurando Armazenamento no Azure | Migração de Dados
+# Dominando armazenamento do azure
 
 
 ## Passo a Passo para Configurar Armazenamento no Azure
