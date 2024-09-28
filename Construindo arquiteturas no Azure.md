@@ -1,72 +1,53 @@
-# Criação de Infraestrutura no Azure | Grupo de Recursos
+### Construindo arquiteturas no Azure
 
-## 1. Portal do Azure 
+### Passo 1: Acessar o Portal do Azure
 
-Entrar no [Portal do Azure](https://portal.azure.com).
+1. *Entrar no Portal*:
+   - Acesse [portal.azure.com](https://portal.azure.com) e faça login com sua conta.
 
-## 2. Criação do Grupo de Recursos |-------------------------------------------------------|
+### Passo 2: Criar um Grupo de Recursos
 
-1. No painel do Azure, busque por “Grupos de Recursos” ou “Resource Groups” na barra de pesquisa.
-2. Clique em **"Criar"** para iniciar a criação de um novo grupo de recursos.
+1. *Criar um Recurso*:
+   - No painel do Azure, clique em "Criar um recurso".
 
-   ![s](https://github.com/user-attachments/assets/3d26af1f-5ee7-46f8-8c62-662ead21aa8b)
+2. *Selecionar Grupo de Recursos*:
+   - Na busca, digite "Grupo de recursos" e selecione a opção correspondente.
 
-4. Preencha as seguintes informações:
-   - **Nome do Grupo de Recursos**: Dê um nome que identifique facilmente o grupo e seu propósito.
-   - **Região**: Selecione a região onde o grupo será criado. É recomendado escolher a mesma região para todos os recursos relacionados para reduzir a latência e os custos.
-5. Clique em **"Revisar + Criar"** e depois em **"Criar"**.
+3. *Configurar o Grupo de Recursos*:
+   - Clique em "Criar" e preencha as informações:
+     - *Nome*: Escolha um nome único para o grupo.
+     - *Assinatura*: Selecione a assinatura desejada.
+     - *Região*: Escolha a região onde o grupo será criado.
 
-   ![aa](https://github.com/user-attachments/assets/52f5df5b-b793-43cb-b6d4-b532d50a575a)
+4. *Revisar e Criar*:
+   - Clique em "Revisar + criar" e, em seguida, em "Criar".
 
+### Passo 3: Adicionar Recursos ao Grupo
 
-## 3. Criação da Rede Virtual |-------------------------------------------------------|
+1. *Navegar para o Grupo de Recursos*:
+   - Acesse o grupo de recursos que você acabou de criar.
 
-1. No painel do Azure, busque por “Redes Virtuais” ou “Virtual Networks”.
-2. Clique em **"Criar"** para iniciar a configuração de uma nova rede virtual.
+2. *Adicionar Recursos*:
+   - Clique em "Adicionar" para incluir novos recursos, como máquinas virtuais, bancos de dados ou serviços de armazenamento.
 
-   ![rr](https://github.com/user-attachments/assets/e11dc79a-d5ed-4e23-b65d-7595b208835d)
+3. *Configurar os Recursos*:
+   - Preencha as informações necessárias para cada recurso e certifique-se de selecioná-lo para o grupo de recursos criado.
 
-4. Preencha os detalhes: |-------------------------------------------------------|
-   - **Nome da Rede Virtual**: Escolha um nome que facilite a identificação da rede.
-   - **Grupo de Recursos**: Selecione o grupo de recursos criado anteriormente.
-   - **Região**: Escolha a mesma região do grupo de recursos.
-   - **Endereço IP**: Defina o intervalo de endereços IP para a rede virtual.
-  
-   ![r1](https://github.com/user-attachments/assets/130e7781-2604-46a9-be03-66edfdc0fa37)
-   
-6. Clique em **"Revisar + Criar"** e depois em **"Criar"**. |-------------------------------------------------------|
+### Passo 4: Gerenciar o Grupo de Recursos
 
-   ![r2](https://github.com/user-attachments/assets/83521a75-553a-4883-afd1-b3b9a6d4bf7c)![r3](https://github.com/user-attachments/assets/f5cdeae6-2fca-4918-8520-18df857666f5)
+1. *Configurações e Permissões*:
+   - No grupo de recursos, você pode gerenciar permissões, atribuir funções e definir políticas.
 
+2. *Monitorar Uso*:
+   - Utilize as opções de monitoramento para visualizar a utilização e o custo dos recursos.
 
-## 1. Criação de Regras no Grupo de Recursos |-------------------------------------------------------|
+3. *Tags e Organização*:
+   - Considere adicionar tags para facilitar a organização e o gerenciamento dos recursos.
 
+### Passo 5: Excluir ou Modificar o Grupo de Recursos
 
+1. *Modificar o Grupo*:
+   - Se necessário, você pode editar as configurações do grupo, adicionar ou remover recursos.
 
-Para garantir a segurança e a eficiência dos seus recursos, é fundamental configurar regras apropriadas no Grupo de Recursos. Aqui está como você pode criar e gerenciar essas regras:
-
-1. **Acesse o Grupo de Recursos**: |-------------------------------------------------------|
-   - No painel do Azure, busque por “Grupos de Recursos” e selecione o grupo que você deseja configurar.
-
-2. **Configuração de Regras de Segurança**:
-   - **Grupo de Segurança de Rede (NSG)**: Adicione ou configure regras de segurança para controlar o tráfego de entrada e saída. No painel de NSG, você pode definir regras para permitir ou negar tráfego com base em IPs, portas e protocolos.
-   - **Regras de Acesso**: Configure permissões e políticas para usuários e serviços que acessam o grupo de recursos. Utilize funções e permissões apropriadas para garantir que apenas usuários autorizados possam modificar ou visualizar os recursos.
-
-3. **Monitoramento e Alertas**: |-------------------------------------------------------|
-   - **Configuração de Alertas**: Defina alertas para monitorar atividades e possíveis violação de políticas de segurança. Configure notificações para ações suspeitas ou uso não autorizado de recursos. 
-
-4. **Revisão e Atualização**: |-------------------------------------------------------|
-   - **Revisão Periódica**: Realize revisões periódicas das regras e políticas para garantir que estejam atualizadas com as melhores práticas e os requisitos de segurança atuais.
-
-## 2. Exemplo de Vulnerabilidades com Falta de Regras em Grupo de Recursos |-------------------------------------------------------|
-
-Caso você não crie regras apropriadas em um Grupo de Recursos, pode enfrentar as seguintes vulnerabilidades:
-
-- **Acesso Não Controlado**: Recursos dentro do grupo podem ser acessados por usuários não autorizados, expondo dados sensíveis e comprometendo a segurança. 
-- **Ataques de Rede**: Sem regras de segurança adequadas, suas redes podem estar suscetíveis a ataques externos, como DDoS ou acesso não autorizado a portas abertas. 
-- **Custo Excessivo**: Recursos não monitorados podem ser utilizados de maneira inadequada, resultando em custos inesperados e elevados. 
-- **Falta de Monitoramento**: A ausência de configuração apropriada pode levar à falta de visibilidade sobre o uso e estado dos recursos, dificultando a identificação de problemas e a realização de auditorias. 
-
-Certifique-se de sempre definir regras de segurança e monitoramento apropriadas para proteger seus recursos e otimizar o gerenciamento de custos.
-
-<img src="https://media.tenor.com/qVKlQMB2DpsAAAAM/hacker-hacking.gif" width="230"></h2>
+2. *Excluir o Grupo*:
+   - Para excluir, acesse o grupo de recursos, clique em "Excluir" e confirme a ação. Lembre-se de que isso removerá todos os recursos contidos no grupo.
