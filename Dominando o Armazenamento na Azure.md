@@ -1,90 +1,65 @@
-# Dominando armazenamento do azure
+### Dominando o armazenamento no Azure
 
+### Passo 1: Acessar o Portal do Azure
 
-## Passo a Passo para Configurar Armazenamento no Azure
+1. *Entrar no Portal*:
+   - Acesse o portal do Azure em [portal.azure.com](https://portal.azure.com) com sua conta.
 
-### 1. Acesse o Portal do Azure 
+### Passo 2: Criar uma Conta de Armazenamento
 
-1. Entre no [Portal do Azure](https://portal.azure.com).
-2. No painel, procure por “Conta de Armazenamento” e clique em **"Criar"**.
-   
----
+1. *Navegar para Armazenamento*:
+   - No painel do Azure, clique em "Criar um recurso" e selecione "Armazenamento".
 
-### 2. Configure a Conta de Armazenamento 
+2. *Selecionar Conta de Armazenamento*:
+   - Escolha "Conta de Armazenamento" e clique em "Criar".
 
-1. **Nome da Conta**: Escolha um nome único para sua conta de armazenamento.
+3. *Configurar Detalhes da Conta*:
+   - Preencha as informações necessárias:
+     - *Assinatura*: Selecione a assinatura desejada.
+     - *Grupo de Recursos*: Crie um novo ou escolha um existente.
+     - *Nome da Conta*: Escolha um nome único.
+     - *Região*: Selecione a região onde deseja hospedar a conta.
 
-2. **Região**: Selecione a região mais próxima para melhor performance.
+4. *Selecionar Tipo de Conta*:
+   - Escolha entre os tipos de conta (Blob, File, Table, Queue) conforme sua necessidade.
 
-3. **Tipo de Conta**: Escolha "Armazenamento General Purpose v2".
-  
-4. **Replicação**: Selecione o tipo de replicação desejado (ex: LRS - Locally Redundant Storage).
-   
-  ![qwer](https://github.com/user-attachments/assets/fe6b345d-58ff-4361-9b95-4eb5efee5639)
-  
-  ![qwert](https://github.com/user-attachments/assets/a32005eb-e1a7-43da-b169-5ddf0578a3fa)
+5. *Configurações Avançadas*:
+   - Ajuste opções como redundância de dados e segurança, se necessário.
 
-5. **Proteção de Dados**: Importante habilitar exclusão temporária para blobs.
-  ![qwertyu](https://github.com/user-attachments/assets/3a71b729-65e0-475e-bc25-53cfd1d75441)
+6. *Criar Conta*:
+   - Clique em "Revisar + criar" e depois em "Criar".
 
-6. **Finalização**
-  ![wwwww](https://github.com/user-attachments/assets/553ca388-2a5e-4167-8244-c3e8e277cbd0)
+### Passo 3: Configurar Contêineres ou Compartilhamentos
 
-  ---
+1. *Acessar a Conta de Armazenamento*:
+   - Após a criação, acesse a conta de armazenamento.
 
-### 3. Criar um Compartilhamento de Arquivos 📁
+2. *Criar um Contêiner (para Blob Storage)*:
+   - Clique em "Containers" e depois em "Adicionar Contêiner".
+   - Dê um nome e defina as permissões de acesso.
 
-1. **Acesse Sua Conta de Armazenamento**: No portal, vá para "Recursos" e selecione sua conta de armazenamento.
-   
-3. **Criar um Compartilhamento de Arquivos**: 
-   - No menu de "Serviços", clique em "Compartilhamento de Arquivos".
-   - Clique em "Adicionar compartilhamento de arquivos".
-   - Nomeie o compartilhamento e defina o tamanho.
-   - Clique em "Criar".
-   
-![cpm1](https://github.com/user-attachments/assets/e72eb2b5-6c79-462b-bb92-1c2c8ed178a4)
+3. *Criar Compartilhamento (para File Storage)*:
+   - Se estiver usando File Storage, clique em "Compartilhamentos de Arquivo" e depois em "Adicionar Compartilhamento".
+   - Nomeie e defina o tamanho.
 
-![cpm2](https://github.com/user-attachments/assets/3021a822-beae-4cb0-9f75-8ed381716cb4)
+### Passo 4: Fazer Upload de Dados
 
-![cpm3](https://github.com/user-attachments/assets/056248c7-73ca-4686-afcf-1d42bd4db918)
+1. *Upload de Arquivos*:
+   - Acesse o contêiner ou compartilhamento criado e clique em "Carregar".
+   - Selecione os arquivos desejados e faça o upload.
 
-### 4. Migrar Dados para o Azure
+### Passo 5: Gerenciar e Monitorar
 
-1. **Criar um projeto**: 
-   - Antes de tudo deve criar um projeto de migração para Azure:
-     
-     ![mg1](https://github.com/user-attachments/assets/7c5f908e-a660-4887-b371-7541ab8b3bf9)
+1. *Gerenciar Acesso e Permissões*:
+   - Defina permissões de acesso e configure políticas de acesso conforme necessário.
 
-    ![mg2](https://github.com/user-attachments/assets/7f16b52a-a8d9-412f-a1bd-2585b83a4fb3)
-  
-    ![mg3](https://github.com/user-attachments/assets/01fa4ad3-b111-470c-bf85-eeb7e7fc18ea)
-  
-    ![mg4](https://github.com/user-attachments/assets/52811d01-3c21-4d2a-9aa5-6782d7e44db1)
-  
-    ![mg5](https://github.com/user-attachments/assets/656ec0fb-b94b-4baf-8f10-9f4a48f226f7)
-  
-    ![mg6](https://github.com/user-attachments/assets/d9ce7dcb-bf0e-444c-8fb9-3258fe1a258b)
+2. *Monitorar Uso*:
+   - Utilize as métricas e logs disponíveis para monitorar a performance e o uso do armazenamento.
 
+### Passo 6: Configurações Adicionais
 
-3. **Instalar o AzCopy**: 
-   - Baixe e instale o AzCopy do site oficial: [AzCopy Download](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy-v10).
+1. *Configurar Backup*:
+   - Considere habilitar o backup e a recuperação para proteger seus dados.
 
-    ![azc1](https://github.com/user-attachments/assets/5b2706c7-109f-45cb-ae29-76cf33543718)
-
-    ![azc2](https://github.com/user-attachments/assets/670afcfe-38e2-4ca7-9186-c65891cd7350)
-
-    ![azc3](https://github.com/user-attachments/assets/ed329b13-f72f-4189-8bb3-c4114663df77)
-
-
-4. **Autenticar com o Azure**:
-   ```bash
-   azcopy login
-   azcopy copy 'caminho/local/do/arquivo' 'https://<sua-conta>.file.core.windows.net/<compartilhamento>/<pasta>?<SAS-token>' --recursive
-
-   ```
-   ![azc4](https://github.com/user-attachments/assets/12ac1499-a6a5-44bf-a177-e76143e1551c)
-
-   ![azc5](https://github.com/user-attachments/assets/fef45f4c-4c10-4cd1-9a3a-d5f49d8b8caf)
-
-<img src="https://media.tenor.com/qVKlQMB2DpsAAAAM/hacker-hacking.gif" width="230"></h2>
-
+2. *Implementar Segurança*:
+   - Aplique medidas de segurança adicionais, como criptografia e redes virtuais.
