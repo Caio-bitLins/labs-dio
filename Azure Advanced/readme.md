@@ -4,5 +4,7 @@ primeiros participantes certificados e ranqueados no Bootcamp até a data de enc
 ### Sobre este Repositório 📫
 > Neste Repositório será especificamente como obtive sucesso no curso **Azure Advanced** que abordam temas como:
 - Microsserviços
+- Docker
+- Serverless
 
 
